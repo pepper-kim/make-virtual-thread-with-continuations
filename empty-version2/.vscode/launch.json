@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "defaults": {
+    "java": {
+      "vmArgs": "--enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED",
+      "console": "integratedTerminal",
+      "projectName": "Continuations"
+    }
+  },
+  "configurations": [
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "demo.App",
+      "projectName": "app"
+    },
+    {
+      "type": "java",
+      "name": "Demo",
+      "request": "launch",
+      "mainClass": "demo.App",
+      "projectName": "Continuations"
+    }
+  ]
+}

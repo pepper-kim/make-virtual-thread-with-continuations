@@ -1,0 +1,42 @@
+plugins {
+    id 'application' // <1>
+}
+
+repositories {
+    mavenCentral() // <2>
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter // <3>
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation libs.guava // <4>
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'demo.App' // <5>
+}
+
+tasks.named('compileJava') {
+    options.compilerArgs += ['--enable-preview', '--add-exports', 'java.base/jdk.internal.vm=ALL-UNNAMED']
+}
+
+tasks.named('compileTestJava') {
+    options.compilerArgs += ['--enable-preview', '--add-exports', 'java.base/jdk.internal.vm=ALL-UNNAMED']
+}
+
+tasks.named('run') {
+    jvmArgs += ['--enable-preview', '--add-exports', 'java.base/jdk.internal.vm=ALL-UNNAMED']
+}
+
+tasks.named('test') {
+    useJUnitPlatform() // <6>
+    jvmArgs += ['--enable-preview', '--add-exports', 'java.base/jdk.internal.vm=ALL-UNNAMED']
+}
