@@ -2,8 +2,8 @@
 Continuation을 이용해서 직접 Virtual thread를 만들어보세요. empty-version을 이용해서 complete-version을 만들 수 있습니다. Cursor와 함께라면 어렵지 않습니다.
 
 ## Prerequisites
-- JDK 24 혹은 그 이상의 버전
-- 아래 VM 옵션과 함께 컴파일 및 실행을 해야 함. `--enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED`
+- JDK 21 혹은 그 이상의 버전
+- 아래 VM 옵션과 함께 컴파일 및 실행을 해야 함. `--enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED` .vscode 옵션으로는 미리 설정해뒀습니다💪!
 
 
 ## Cursor 설정
